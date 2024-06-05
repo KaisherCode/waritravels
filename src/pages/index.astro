@@ -1,5 +1,9 @@
 ---
+import SearchIcon from "@/icons/search.astro"
+import MoonIcon from "@/icons/moon.astro"
+import UserIcon from "@/icons/user.astro"
 
+const pageTitle = "Wari Travels"
 ---
 
 <html lang="en">
@@ -8,9 +12,28 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class=" font-Montserrat">
+		<header class=" bg-white border-b-2">
+			<nav class=" w-full h-14 flex justify-between p-8 items-center">
+				<ul class="w-auto h-auto">
+					<li class="text-xl text-primary font-black"><a href="">Wari Travels</a></li>
+				</ul>
+				<ul class="flex justify-between space-x-8 font-bold text-primary text-base">
+					<li><a href="">Home</a></li>
+					<li><a href="">Locations</a></li>
+					<li><a href="">Stays</a></li>
+					<li><a href="">About us</a></li>
+				</ul>
+				<div class="flex space-x-4">
+					<SearchIcon/>
+					<button>
+						<MoonIcon/>
+					</button>
+          <UserIcon/>
+				</div>
+			</nav>
+		</header>
 	</body>
 </html>
