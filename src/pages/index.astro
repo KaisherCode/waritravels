@@ -2,6 +2,10 @@
 import SearchIcon from "@/icons/search.astro"
 import MoonIcon from "@/icons/moon.astro"
 import UserIcon from "@/icons/user.astro"
+import XIcon from "@/icons/x.astro"
+import InstagramIcon from "@/icons/instagram.astro"
+import EmailIcon from "@/icons/email.astro"
+import GitHubIcon from "@/icons/github.astro"
 
 const pageTitle = "Wari Travels"
 ---
@@ -14,9 +18,9 @@ const pageTitle = "Wari Travels"
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
-	<body class=" font-Montserrat">
+	<body class=" font-Montserrat overflow-x-hidden">
 		<header class=" bg-white border-b-2">
-			<nav class=" w-full h-14 flex justify-between p-8 items-center">
+			<nav class="hidden w-full h-14 lg:flex justify-between p-8 items-center">
 				<ul class="w-auto h-auto">
 					<li class="text-xl text-primary font-black"><a href="">Wari Travels</a></li>
 				</ul>
@@ -31,9 +35,96 @@ const pageTitle = "Wari Travels"
 					<button>
 						<MoonIcon/>
 					</button>
-          <UserIcon/>
+          			<UserIcon/>
 				</div>
 			</nav>
 		</header>
+		<main class="w-full h-screen">
+			<section class="w-full h-3/4"><!--home -->
+				<div class="absolute w-full h-full flex flex-col space-y-96 py-4 items-center lg:space-y-0 lg:items-start lg:pt-48">
+					<input 
+						class=" outline-none p-2 rounded-full shadow-sm transition duration-300 focus-within:shadow-sm focus:ring-2 focus:w-11/12 lg:hidden" 
+						type="search"
+						placeholder="San Francisco"
+					>
+					<ul class="hidden text-4xl font-semibold lg:w-2/5 h-auto lg:flex pb-6">
+						<li class="ml-16">Find More Locations like This</li>
+					</ul>
+					<button 
+						class="w-48 bg-white p-2 text-lg font-semibold rounded-3xl text-primary shadow-sm transition duration-500 ease-in-out hover:bg-primary hover:text-white translate transform hover:translate-y-1 hover:scale-110 lg:ml-16">
+						Explore more
+					</button>
+				</div>
+				<figure class=" w-full lg:h-full lg:bg-sanFranciscoDesktop lg:bg-cover lg:bg-center">
+					<img class="lg:hidden" src="../../public/img/sanFrancisco.jpg" alt="">
+				</figure>
+			</section>
+      <section>
+
+      </section>
+      <section class="px-6 w-full h-auto lg:px-6 pt-8" id="trending_stays">
+        <h2 class="text-3xl text-primary font-semibold pb-6 mt-6 dark:text-white">Trending Stays</h2>
+        <div class="w-full h-full flex flex-col items-center justify-center">
+            <figure class="w-full h-96 bg-chicago bg-cover rounded-xl mb-8 lg:bg-center">
+                <h3 class=" pt-8 pl-8 pb-2 font-semibold text-3xl lg:text-black">Chicago</h3>
+                <p class="text-sm pl-8 text-black mr-24 lg:text-lg">2 rooms, 1 bathroom and chicken</p>
+            </figure>
+            <div class="lg:flex lg:h-full lg:w-full lg:space-x-4">
+                <figure class="w-full h-96 bg-miami bg-cover rounded-xl lg:h-auto mb-8">
+                    <h3 class=" pt-8 pl-8 pb-2 text-3xl font-semibold lg:text-white">Miami</h3>
+                    <p class="text-sm pl-8 text-white mr-24 lg:text-lg">3 rooms, 2 bathroom, chicken and amazing sea view</p>
+                </figure>
+                <div class="lg:h-full lg:flex lg:flex-col lg:pl-8">
+                    <figure class="w-full h-96 bg-LA bg-cover rounded-xl mb-8">
+                        <h3 class="pt-8 pl-8 pb-2 text-3xl font-semibold lg:text-white">Los Angeles</h3>
+                        <p class="text-sm pl-8 text-white mr-24 lg:text-lg">3 rooms, 2 bathroom, chicken and private pool.</p>
+                    </figure>
+                    <figure class="w-full h-96 bg-bali bg-cover rounded-xl mb-8">
+                        <h3 class="pt-8 pl-8 pb-2 text-3xl font-semibold text-white">Bali</h3>
+                        <p class="text-sm pl-8 text-white mr-24 lg:text-lg">2 rooms, 2 bathroom, chicken and private pool.</p>
+                    </figure>
+                </div>
+            </div>
+        </div>
+      </section><!--rentas destacados end-->
+			<section class="w-full pt-20 lg:pt-6"> <!--FAQS -->
+				<div class="w-full h-full flex flex-col space-y-4 px-6">
+					<h2 class=" text-3xl font-semibold text-primary pb-4">FAQS</h2>
+					<div>
+						<h3 class=" text-primary text-xl font-medium">Pyments methods</h3>
+						<p class="text-base pt-2">We accept VISA, MasterCard, American Express, Paypal and Binance</p>
+					</div>
+					<div>
+						<h3 class="text-primary text-xl font-medium">Cancellation Policy</h3>
+						<p class="text-base pt-2">For refund of payment for reservation will be made only if within 72 hrs. to the date of booking, otherwise it will not be made.</p>
+					</div>
+					<div>
+						<h3 class="text-primary text-xl font-medium">Long Stays</h3>
+						<p class="text-base pt-2">We accept VISA, MasterCard, American Express, Paypal and Binance.</p>
+					</div>
+					<div class="pb-6">
+						<h3 class="text-primary text-xl font-medium">Additinal services</h3>
+						<p class="text-base pt-2">Each accommodation has extra services such as experiences, meals, events among others that may or may not be included in the cost of the stay and the extra costs are relative to the host.</p>
+					</div>
+				</div>
+			</section>
+			<footer class="lg:pt-14 relative flex w-full flex-col md:flex-row md:justify-between">
+				<hr class="absolute top-0 h-[2px] w-full min-w-[18rem] border-t-0 bg-transparent bg-gradient-to-r from-transparent via-purple-500 to-transparent bg-center md:my-9">
+				<div class="w-full lg:text-start text-center p-10 ">
+					&copy; {new Date().getFullYear()} Hynkor
+					<span aria-hidden="true" class="hidden md:inline">|</span>
+					<br aria-hidden class="block md:hidden" />
+					All rights reserved.
+				</div>
+				<hr class=" h-[2px] w-full min-w-[18rem] border-t-0 bg-transparent bg-gradient-to-r from-transparent via-purple-500 to-transparent bg-center md:hidden">
+				<ul class="flex justify-center items-center gap-1 p-10">
+					<li><a href="/"><InstagramIcon /></a></li>
+					<li><a href="/"><GitHubIcon/></a></li>
+					<li><a href="/"><XIcon /></a></li>
+					<li><a href="/"><EmailIcon /></a></li>
+				</ul>
+			</footer> 
+		</main>
+		
 	</body>
-</html>
+</html>	
