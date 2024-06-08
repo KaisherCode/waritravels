@@ -9,6 +9,7 @@ import GitHubIcon from "@/icons/github.astro"
 import HomeIcon from "@/icons/home.astro"
 import TrendingUpIcon from "@/icons/trending-up.astro"
 import LocationIcon from "@/icons/location.astro"
+import HamburgerIcon from "@/icons/hamburger.astro"
 
 const pageTitle = "Wari Travels"
 ---
@@ -21,13 +22,13 @@ const pageTitle = "Wari Travels"
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
-	<body class=" font-Montserrat overflow-x-hidden">
+	<body class=" font-Montserrat overflow-x-hidden dark:bg-gray-900">
 		<header class="border-b-2">
-			<nav class="hidden w-full h-14 lg:flex justify-between p-8 items-center bg-white fixed z-10">
+			<nav class="hidden w-full h-14 lg:flex justify-between p-8 items-center bg-white fixed z-10 dark:bg-gray-800">
 				<ul class="w-auto h-auto">
-					<li class="text-xl text-primary font-black"><a href="">Wari Travels</a></li>
+					<li class="text-xl text-primary font-black dark:text-white"><a href="">Wari Travels</a></li>
 				</ul>
-				<ul class="flex justify-between space-x-8 font-bold text-primary text-base">
+				<ul class="flex justify-between space-x-8 font-bold text-primary text-base dark:text-white">
 					<li><a href="">Home</a></li>
 					<li><a href="">Locations</a></li>
 					<li><a href="">Stays</a></li>
@@ -35,10 +36,11 @@ const pageTitle = "Wari Travels"
 				</ul>
 				<div class="flex space-x-4">
 					<SearchIcon/>
-					<button>
+					<button id="toggle">
 						<MoonIcon/>
 					</button>
           <UserIcon/>
+          <HamburgerIcon/>
 				</div>
 			</nav>
 		</header>
@@ -169,19 +171,19 @@ const pageTitle = "Wari Travels"
 					<h2 class=" text-3xl font-semibold text-primary pb-4">FAQS</h2>
 					<div>
 						<h3 class=" text-primary text-xl font-medium">Pyments methods</h3>
-						<p class="text-base pt-2">We accept VISA, MasterCard, American Express, Paypal and Binance</p>
+						<p class="text-base pt-2 dark:text-white">We accept VISA, MasterCard, American Express, Paypal and Binance</p>
 					</div>
 					<div>
 						<h3 class="text-primary text-xl font-medium">Cancellation Policy</h3>
-						<p class="text-base pt-2">For refund of payment for reservation will be made only if within 72 hrs. to the date of booking, otherwise it will not be made.</p>
+						<p class="text-base pt-2 dark:text-white">For refund of payment for reservation will be made only if within 72 hrs. to the date of booking, otherwise it will not be made.</p>
 					</div>
 					<div>
 						<h3 class="text-primary text-xl font-medium">Long Stays</h3>
-						<p class="text-base pt-2">We accept VISA, MasterCard, American Express, Paypal and Binance.</p>
+						<p class="text-base pt-2 dark:text-white">We accept VISA, MasterCard, American Express, Paypal and Binance.</p>
 					</div>
 					<div class="pb-6">
 						<h3 class="text-primary text-xl font-medium">Additinal services</h3>
-						<p class="text-base pt-2">Each accommodation has extra services such as experiences, meals, events among others that may or may not be included in the cost of the stay and the extra costs are relative to the host.</p>
+						<p class="text-base pt-2 dark:text-white">Each accommodation has extra services such as experiences, meals, events among others that may or may not be included in the cost of the stay and the extra costs are relative to the host.</p>
 					</div>
 				</div>
 			</section>
@@ -214,7 +216,7 @@ const pageTitle = "Wari Travels"
       </section><!--tab-bar end-->
 			<footer class="lg:pt-14 relative flex w-full flex-col md:flex-row md:justify-between">
 				<hr class="absolute top-0 h-[2px] w-full min-w-[18rem] border-t-0 bg-transparent bg-gradient-to-r from-transparent via-red-500 to-transparent bg-center md:my-9">
-				<div class="w-full lg:text-start text-center p-10 ">
+				<div class="w-full lg:text-start text-center p-10 dark:text-white">
 					&copy; {new Date().getFullYear()} Wari Travels
 					<span aria-hidden="true" class="hidden md:inline">|</span>
 					<br aria-hidden class="block md:hidden" />
@@ -229,5 +231,19 @@ const pageTitle = "Wari Travels"
 				</ul>
 			</footer> 
 		</main>
+    <script>
+      const htmlElement = document.querySelector("html");
+      const toggleButton = document.querySelector("#toggle")
+      const toggleButtonSm = document.querySelector("#toggle-sm")
+
+    toggleButton.addEventListener("click",() => toggleDarkMode())
+    toggleButtonSm.addEventListener("click",() => toggleDarkMode())
+
+    const toggleDarkMode = () => {
+        htmlElement.classList.contains("dark")?
+        htmlElement.classList.remove("dark"):
+        htmlElement.classList.add("dark")
+    }
+    </script>
 	</body>
 </html>	
